@@ -16,7 +16,7 @@ export const GridLayout = ({
           md: `repeat(${columns.md}, 1fr)`,
         },
         gap,
-        alignItems: "start",
+        alignItems: "stretch",
       }}
       {...props}
     >

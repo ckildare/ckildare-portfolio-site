@@ -1,82 +1,52 @@
+import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Chip from "@mui/material/Chip";
 import Link from "@mui/material/Link";
-import { HoverableMediaCard } from "../../components/HoverableMediaCard";
 import { LinkRounded } from "@mui/icons-material";
 
-import { ExpandableCard } from "../../components/ExpandableCard";
+import { HoverableMediaCard } from "../../components/HoverableMediaCard";
 
 export const ProjectCard = ({ project }) => {
-  const {
-    title,
-    shortTitle,
-    context,
-    concept,
-    technologies,
-    status,
-    projectLink,
-    repoLink,
-    supportingImgs,
-  } = project;
+  const { title, description, status, projectLink, repoLink, supportingImgs } =
+    project;
 
   return (
-    <ExpandableCard initialHeight="20rem">
+    <Card
+      elevation={3}
+      sx={{
+        p: 2,
+        borderRadius: 2,
+        minWidth: "18rem",
+        maxWidth: "42rem",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        gap: 3,
+      }}
+    >
+      {supportingImgs?.length > 0 && (
+        <HoverableMediaCard images={supportingImgs} />
+      )}
+
       <CardContent
         sx={{
           p: 0,
+          flex: 1,
           display: "flex",
           flexDirection: "column",
           gap: 2,
-          mb: 1,
         }}
       >
-        <Typography variant="h6" fontWeight={700}>
+        <Typography variant="h5" fontWeight={700}>
           {title}
         </Typography>
+        
+        <Typography variant="body2">{description}</Typography>
 
-        <Chip
-          label={status}
-          color={
-            status === "FINISHED"
-              ? "success"
-              : status === "IN_PROGRESS"
-              ? "warning"
-              : "default"
-          }
-          sx={{ width: "fit-content" }}
-        />
-
-        <Box>
-          <Typography variant="subtitle1" fontWeight={700} color="text.secondary">
-            Overview
-          </Typography>
-          <Typography variant="body2">{context}</Typography>
-        </Box>
-
-        {concept && (
-          <Box>
-            <Typography variant="subtitle1" fontWeight={700} color="text.secondary">
-              Concept
-            </Typography>
-            <Typography variant="body2">{concept}</Typography>
-          </Box>
-        )}
-
-        <Box>
-          <Typography variant="subtitle1" fontWeight={700} color="text.secondary">
-            Technologies
-          </Typography>
-
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
-            {technologies.map((tech, key) => (
-              <Chip key={key} label={tech} variant="outlined" />
-            ))}
-          </Box>
-        </Box>
-
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+        <Box
+          sx={{ display: "flex", flexDirection: "column", gap: 1, mt: "auto" }}
+        >
           {projectLink && (
             <Link
               href={projectLink}
@@ -123,23 +93,7 @@ export const ProjectCard = ({ project }) => {
             </Link>
           )}
         </Box>
-
-        {supportingImgs.length > 0 && (
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 2 }}>
-            <Typography variant="subtitle1" fontWeight={700} color="text.secondary">
-              Screenshots
-            </Typography>
-
-            {supportingImgs.map((imgSrc, key) => (
-              <HoverableMediaCard
-                key={key}
-                imgSrc={imgSrc.src}
-                alt={`${shortTitle} screenshot ${key + 1}`}
-              />
-            ))}
-          </Box>
-        )}
       </CardContent>
-    </ExpandableCard>
+    </Card>
   );
 };
