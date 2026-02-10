@@ -1,5 +1,5 @@
 import styles from './statusPill.module.scss';
-import { ProjectStatus } from '@/public/enums/projectStatus.js';
+import { ProjectStatus } from '@/public/enums/ProjectStatus.js';
 import Image from 'next/image';
 import inProgress from '@/public/icons/inProgress.svg';
 import finished from '@/public/icons/done.svg';

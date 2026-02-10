@@ -1,4 +1,4 @@
-import { ProjectStatus } from '@/public/enums/projectStatus';
+import { ProjectStatus } from '@/public/enums/ProjectStatus';
 
 import axelWilson from '../../public/card-screenshots/axel-wilson-cover-image.png';
 import buddySystems from '../../public/card-screenshots/buddy-systems-cover-image.png';

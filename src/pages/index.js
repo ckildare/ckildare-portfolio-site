@@ -11,8 +11,6 @@ export default function Index() {
     <Box>
       <Header />
       <Box sx={{ mt: 6 }}>
-
-        {/* ABOUT ME */}
         <Container maxWidth="md" sx={{ mb: 8 }}>
           <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
             <Typography variant="h4" fontWeight={700} gutterBottom>
@@ -26,8 +24,8 @@ export default function Index() {
           </Paper>
         </Container>
 
-        <WorkLayout />
         <ProjectsLayout />
+        <WorkLayout />
       </Box>
     </Box>
   );
