@@ -1,9 +1,10 @@
-import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Link from "@mui/material/Link";
+
+import { ExpandableCard } from "../../components/ExpandableCard";
 
 export const JobCard = ({ job }) => {
   const {
@@ -17,22 +18,16 @@ export const JobCard = ({ job }) => {
   } = job;
 
   return (
-    <Card
-      elevation={3}
-      sx={{
-        p: 2,
-        borderRadius: 2,
-        minWidth: "18rem",
-        maxWidth: "32rem",
-        display: "flex",
-        flexDirection: "column",
-        gap: 3,
-      }}
-    >
+    <ExpandableCard initialHeight="18rem">
       <CardContent
-        sx={{ p: 0, display: "flex", flexDirection: "column", gap: 2 }}
+        sx={{
+          p: 0,
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          mb: 1,
+        }}
       >
-        {/* Header */}
         <Box>
           <Typography variant="body2" color="text.secondary">
             {startDate} – {endDate}
@@ -43,12 +38,7 @@ export const JobCard = ({ job }) => {
           </Typography>
 
           {companyData.link ? (
-            <Link
-              href={companyData.link}
-              target="_blank"
-              underline="hover"
-              color="primary"
-            >
+            <Link href={companyData.link} target="_blank" underline="hover" color="primary">
               {companyData.name}
             </Link>
           ) : (
@@ -64,12 +54,7 @@ export const JobCard = ({ job }) => {
           )}
 
           {(companyData.contacts?.email || companyData.contacts?.phone) && (
-            <Typography
-              component="div"
-              variant="body2"
-              color="text.secondary"
-              sx={{ mt: 1 }}
-            >
+            <Typography component="div" variant="body2" color="text.secondary" sx={{ mt: 1 }}>
               {companyData.contacts.email && (
                 <Typography component="div" variant="body2">
                   Email: {companyData.contacts.email}
@@ -85,27 +70,17 @@ export const JobCard = ({ job }) => {
           )}
         </Box>
 
-        {/* Company Description */}
         {companyData.description && (
           <Box>
-            <Typography
-              variant="subtitle1"
-              fontWeight={700}
-              color="text.secondary"
-            >
+            <Typography variant="subtitle1" fontWeight={700} color="text.secondary">
               About {companyData.shortName}
             </Typography>
             <Typography variant="body2">{companyData.description}</Typography>
           </Box>
         )}
 
-        {/* Contributions */}
         <Box>
-          <Typography
-            variant="subtitle1"
-            fontWeight={700}
-            color="text.secondary"
-          >
+          <Typography variant="subtitle1" fontWeight={700} color="text.secondary">
             My Contributions
           </Typography>
 
@@ -119,13 +94,8 @@ export const JobCard = ({ job }) => {
           </Box>
         </Box>
 
-        {/* Outcomes */}
         <Box>
-          <Typography
-            variant="subtitle1"
-            fontWeight={700}
-            color="text.secondary"
-          >
+          <Typography variant="subtitle1" fontWeight={700} color="text.secondary">
             Outcomes
           </Typography>
 
@@ -139,13 +109,12 @@ export const JobCard = ({ job }) => {
           </Box>
         </Box>
 
-        {/* Technologies */}
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
           {technologies.map((tech, key) => (
             <Chip key={key} label={tech} variant="outlined" />
           ))}
         </Box>
       </CardContent>
-    </Card>
+    </ExpandableCard>
   );
 };
