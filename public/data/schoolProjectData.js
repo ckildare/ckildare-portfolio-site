@@ -1,4 +1,4 @@
-import { ProjectStatus } from 'public/enums/projectStatus';
+import { ProjectStatus } from '@/ProjectStatus';
 import laundryScheduler from 'public/card-screenshots/laundry-scheduler-cover-image.png';
 
 export const schoolProjectData = [
