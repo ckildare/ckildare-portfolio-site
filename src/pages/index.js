@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import Header from '@/layout/Header';
 import WorkLayout from '@/layout/work/WorkLayout';
 import ProjectsLayout from '@/layout/projects/ProjectsLayout';
+import { Contact } from '@/layout/contacts/Contact';
 
 export default function Index() {
   return (
@@ -26,6 +27,7 @@ export default function Index() {
 
         <ProjectsLayout />
         <WorkLayout />
+        <Contact />
       </Box>
     </Box>
   );
