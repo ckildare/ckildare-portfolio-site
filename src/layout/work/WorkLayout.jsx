@@ -2,7 +2,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { JobCard } from "./JobCard";
-import workData from "./work.json";
+import workData from "data/work.json";
 
 const WorkLayout = () => {
   return (

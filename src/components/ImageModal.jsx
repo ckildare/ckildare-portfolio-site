@@ -55,6 +55,7 @@ export const ImageModal = ({ images, openIndex, onClose }) => {
         <Box
           component="img"
           src={images[index].src}
+          loading="lazy"
           alt={`Screenshot ${index + 1}`}
           sx={{
             maxHeight: "90vh",

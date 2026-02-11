@@ -2,7 +2,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { GridLayout } from "../../components/GridLayout";
 import { ProjectCard } from "./ProjectCard";
-import { projectData } from "./projects";
+import { projectData } from "data/projects";
 
 const ProjectsLayout = () => {
   return (
