@@ -144,6 +144,7 @@ export const Contact = () => {
           size="large"
           disabled={!captchaToken || loading}
           onClick={handleSubmit}
+          alt="Button to submit and send email"
           sx={{
             mt: 1,
             py: 1.25,

@@ -26,6 +26,7 @@ export const ImageModal = ({ images, openIndex, onClose }) => {
       >
         <IconButton
           onClick={onClose}
+          alt="Close image modal button"
           sx={{
             position: "absolute",
             top: 8,
@@ -40,6 +41,7 @@ export const ImageModal = ({ images, openIndex, onClose }) => {
         {images.length > 1 && (
           <IconButton
             onClick={prev}
+            alt="Paginate to previous image in carousel button"
             sx={{
               position: "absolute",
               top: "50%",
@@ -68,6 +70,7 @@ export const ImageModal = ({ images, openIndex, onClose }) => {
         {images.length > 1 && (
           <IconButton
             onClick={next}
+            alt="Paginate to next image in carousel button"
             sx={{
               position: "absolute",
               top: "50%",

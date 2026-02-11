@@ -52,6 +52,7 @@ export const ProjectCard = ({ project }) => {
               href={projectLink}
               target="_blank"
               underline="none"
+              alt="Link to view project"
               sx={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -75,6 +76,7 @@ export const ProjectCard = ({ project }) => {
               href={repoLink}
               target="_blank"
               underline="none"
+              alt="Link to view project repo"
               sx={{
                 display: "inline-flex",
                 alignItems: "center",

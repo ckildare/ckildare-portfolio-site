@@ -31,27 +31,21 @@ export default function Header() {
           </Box>
 
           <Box sx={{ display: "flex", alignItems: "center", gap: 2, mt: 2 }}>
-            <Link href="https://github.com/ckildare" target="_blank">
-              <IconButton color="inherit">
+            <Link href="https://github.com/ckildare" alt="Link to ckildare GitHub page" target="_blank">
+              <IconButton alt="Icon button for GitHub Link" color="inherit">
                 <GitHubIcon fontSize="large" />
               </IconButton>
             </Link>
 
-            <Link href="https://gitlab.com/ckildare19" target="_blank">
-              <IconButton color="inherit">
+            <Link href="https://gitlab.com/ckildare19" alt="Link to ckildare GitLab page" target="_blank">
+              <IconButton alt="Icon button for GitLab Link" color="inherit">
                 <SiGitlab size={28} />
               </IconButton>
             </Link>
 
-            <Link href="https://linkedin.com/in/connor-kildare" target="_blank">
-              <IconButton color="inherit">
+            <Link href="https://linkedin.com/in/connor-kildare" alt="Link to LinkedIn" target="_blank">
+              <IconButton alt="Icon button for LinkedIn Link" color="inherit">
                 <LinkedInIcon fontSize="large" />
-              </IconButton>
-            </Link>
-
-            <Link href="mailto:ckildare10@gmail.com">
-              <IconButton color="inherit">
-                <EmailIcon fontSize="large" />
               </IconButton>
             </Link>
           </Box>

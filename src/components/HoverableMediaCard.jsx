@@ -66,6 +66,7 @@ export const HoverableMediaCard = ({ images }) => {
         >
           <Button
             variant="contained"
+            alt="Expands project image"
             sx={{
               fontWeight: 600,
               borderRadius: 1.5,
