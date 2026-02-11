@@ -1,9 +1,9 @@
 import { ProjectStatus } from '@/ProjectStatus'
 
-import axelWilson from 'public/card-screenshots/axel-wilson-cover-image.png';
-import buddySystems from 'public/card-screenshots/buddy-systems-cover-image.png';
-import cookiePantry from 'public/card-screenshots/cookie-pantry.png';
-import microsoftCookies from 'public/card-screenshots/microsoft-cookies.png';
+import axelWilson from 'public/card-screenshots/axel-wilson-cover-image.webp';
+import buddySystems from 'public/card-screenshots/buddy-systems-cover-image.webp';
+import cookiePantry from 'public/card-screenshots/cookie-pantry.webp';
+import microsoftCookies from 'public/card-screenshots/microsoft-cookies.webp';
 
 export const projectData = [
   {
