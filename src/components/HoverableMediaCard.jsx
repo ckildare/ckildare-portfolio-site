@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Box from "@mui/material/Box";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";

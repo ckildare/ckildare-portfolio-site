@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { GridLayout } from "../../components/GridLayout";
