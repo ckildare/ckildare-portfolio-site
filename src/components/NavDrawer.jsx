@@ -13,12 +13,21 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { SiGitlab } from "react-icons/si";
 import Link from "next/link";
 import { ResumeButton } from "./ResumeButton";
+import { SocialLinks } from "./SocialLinks";
 
 export function NavDrawer({ open, onClose, navItems, onNavigate }) {
   return (
     <Drawer anchor="left" open={open} onClose={onClose}>
       <Box sx={{ width: 260, p: 2, position: "relative" }}>
-        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 2, mt: 4 }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            mb: 2,
+            mt: 4,
+          }}
+        >
           <Typography variant="h6" fontWeight={700}>
             Navigation
           </Typography>
@@ -54,51 +63,14 @@ export function NavDrawer({ open, onClose, navItems, onNavigate }) {
 
         <Divider sx={{ my: 2 }} />
 
-        <Box sx={{ display: "flex", gap: 2, mt: 1 }}>
-          <Link
-            href="https://github.com/ckildare"
-            target="_blank"
-            aria-label="Go to ckildare GitHub page"
-            alt="Link to ckildare GitHub page"
-          >
-            <IconButton
-              color="inherit"
-              aria-label="GitHub icon button"
-              alt="GitHub icon button"
-            >
-              <GitHubIcon />
-            </IconButton>
-          </Link>
-
-          <Link
-            href="https://gitlab.com/ckildare19"
-            target="_blank"
-            aria-label="Go to ckildare19 GitLab page"
-            alt="Link to ckildare19 GitLab page"
-          >
-            <IconButton
-              color="inherit"
-              aria-label="GitLab icon button"
-              alt="GitLab icon button"
-            >
-              <SiGitlab size={22} />
-            </IconButton>
-          </Link>
-
-          <Link
-            href="https://linkedin.com/in/connor-kildare"
-            target="_blank"
-            aria-label="Go to LinkedIn page"
-            alt="Link to LinkedIn page"
-          >
-            <IconButton
-              color="inherit"
-              aria-label="LinkedIn icon button"
-              alt="LinkedIn icon button"
-            >
-              <LinkedInIcon />
-            </IconButton>
-          </Link>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <SocialLinks />
         </Box>
       </Box>
     </Drawer>

@@ -5,11 +5,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { SiGitlab } from "react-icons/si";
-import Link from "next/link";
 import { NavDrawer } from "@/components/NavDrawer";
+import { SocialLinks } from "@/components/SocialLinks";
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -84,50 +81,7 @@ export default function Header() {
                 gap: 2,
               }}
             >
-              <Link
-                href="https://github.com/ckildare"
-                target="_blank"
-                aria-label="Go to ckildare GitHub page"
-                alt="Link to ckildare GitHub page"
-              >
-                <IconButton
-                  color="inherit"
-                  aria-label="GitHub icon button"
-                  alt="GitHub icon button"
-                >
-                  <GitHubIcon fontSize="large" />
-                </IconButton>
-              </Link>
-
-              <Link
-                href="https://gitlab.com/ckildare19"
-                target="_blank"
-                aria-label="Go to ckildare19 GitLab page"
-                alt="Link to ckildare19 GitLab page"
-              >
-                <IconButton
-                  color="inherit"
-                  aria-label="GitLab icon button"
-                  alt="GitLab icon button"
-                >
-                  <SiGitlab size={28} />
-                </IconButton>
-              </Link>
-
-              <Link
-                href="https://linkedin.com/in/connor-kildare"
-                target="_blank"
-                aria-label="Go to LinkedIn page"
-                alt="Link to LinkedIn page"
-              >
-                <IconButton
-                  color="inherit"
-                  aria-label="LinkedIn icon button"
-                  alt="LinkedIn icon button"
-                >
-                  <LinkedInIcon fontSize="large" />
-                </IconButton>
-              </Link>
+              <SocialLinks />
             </Box>
           </Box>
         </Toolbar>
