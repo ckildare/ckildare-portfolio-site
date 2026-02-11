@@ -1,15 +1,49 @@
 [
   {
-    "title": "Software Engineering Intern",
-    "name": "Speedway Motors Inc.",
-    "description": "Speedway Motors is America's Oldest Speed Shop® and has been a trusted source for high performance parts for street rods and racing for over 68 years. Speedway Motors has built a reputation for superior service, heavily aided by a strong online shopping experience.",
-    "startDate": "May 2022",
-    "endDate": "Current",
+    "title": "Software Developer I",
+    "name": "Assurity, Inc",
+    "startDate": "May 2025",
+    "endDate": "Present",
     "contributions": [
-      "Increased customer conversions and product impressions by expanding recommendations across the majority of Speedway Motors pages.",
-      "Improved the performance of checkout and shopping cart read / write operations by optimizing related API calls.",
-      "Collaborated with intern cohort to extend the Speedway Motors onboarding process.",
-      "Aided in development of a Selenium test suite to ensure the validity of code across all environments."
+      "Developed and contributed to ASP.NET MVC application releases.",
+      "Addressed legacy issues using RabbitMQ, SQL Server Management Studio (SSMS), and Azure DevOps.",
+      "Implemented application logging to reduce production errors.",
+      "Built internal tools using low-code platforms to support business operations."
+    ]
+  },
+  {
+    "title": "Software Engineer Intern",
+    "name": "Speedway Motors Inc.",
+    "startDate": "May 2022",
+    "endDate": "Jun 2024, Dec 2024 – May 2025",
+    "contributions": [
+      "Optimized C# checkout APIs, reducing response time by approximately 38%.",
+      "Led React.js frontend development using Context API, LogRocket, and Split feature flags.",
+      "Built a C# microservice for product recommendations with Storybook and Google Analytics integration.",
+      "Saved the company over $100K annually through backend integration and order tracking optimization."
+    ]
+  },
+  {
+    "title": "Software Engineer Intern",
+    "name": "Pinata Inc.",
+    "startDate": "Jun 2024",
+    "endDate": "Dec 2024",
+    "contributions": [
+      "Refactored React.js and TypeScript frontend using Material UI.",
+      "Implemented Figma designs and OAuth2 authentication flows.",
+      "Created third-party API integration suites in Go, validated using Postman."
+    ]
+  },
+  {
+    "title": "Team Lead and Developer",
+    "name": "DMSi",
+    "startDate": "Aug 2023",
+    "endDate": "May 2025",
+    "contributions": [
+      "Led a five-developer team to build a lumber search portal.",
+      "Designed RESTful APIs in Go for scalable, low-latency inventory access.",
+      "Deployed infrastructure on Google Cloud Platform with GitHub integrations.",
+      "Delivered a production-ready system that reduced inventory errors and processing times by 25%."
     ]
   },
   {

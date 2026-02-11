@@ -1,6 +1,6 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { GridLayout } from "../../components/GridLayout";
+import Box from "@mui/material/Box";
 import { JobCard } from "./JobCard";
 import workData from "./work.json";
 
@@ -15,11 +15,17 @@ const WorkLayout = () => {
         Work Experience
       </Typography>
 
-      <GridLayout>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 4,
+        }}
+      >
         {workData.map((job, index) => (
           <JobCard key={index} job={job} />
         ))}
-      </GridLayout>
+      </Box>
     </Container>
   );
 };
