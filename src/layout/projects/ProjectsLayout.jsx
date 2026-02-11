@@ -4,9 +4,11 @@ import Typography from "@mui/material/Typography";
 import { GridLayout } from "../../components/GridLayout";
 import { projectData } from "data/projects";
 
-const ProjectCard = dynamic(() => import("./ProjectCard"), {
-  ssr: false,
-});
+const ProjectCard = dynamic(
+  () => import("./ProjectCard.jsx").then(mod => mod.ProjectCard),
+  { ssr: false }
+);
+
 
 const ProjectsLayout = () => {
   return (
