@@ -9,28 +9,26 @@ import { Contact } from '@/layout/contacts/Contact';
 
 export default function Index() {
   return (
-    <main>
-      <Box>
-        <Header />
-        <Box sx={{ mt: 6 }}>
-          <Container maxWidth="md" sx={{ mb: 8 }}>
-            <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
-              <Typography variant="h4" fontWeight={700} gutterBottom>
-                About Me
-              </Typography>
-              <Typography variant="body1" color="text.secondary">
-                I'm a software developer with a passion for building clean, efficient,
-                and user‑focused applications. I enjoy working across the stack and
-                constantly learning new technologies to expand my skill set.
-              </Typography>
-            </Paper>
-          </Container>
+    <Box>
+      <Header />
+      <Box sx={{ mt: 6 }}>
+        <Container maxWidth="md" sx={{ mb: 8 }}>
+          <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
+            <Typography variant="h4" fontWeight={700} gutterBottom>
+              About Me
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              I'm a software developer with a passion for building clean, efficient,
+              and user‑focused applications. I enjoy working across the stack and
+              constantly learning new technologies to expand my skill set.
+            </Typography>
+          </Paper>
+        </Container>
 
-          <ProjectsLayout />
-          <WorkLayout />
-          <Contact />
-        </Box>
+        <ProjectsLayout />
+        <WorkLayout />
+        <Contact />
       </Box>
-    </main>
+    </Box>
   );
 }

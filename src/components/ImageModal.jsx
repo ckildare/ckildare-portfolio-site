@@ -9,9 +9,15 @@ import ChevronRight from "@mui/icons-material/ChevronRight";
 export const ImageModal = ({ images, openIndex, onClose }) => {
   const [index, setIndex] = useState(openIndex);
 
+  const buttonHoverStyles = {
+    backgroundColor: "rgba(128, 128, 128, 0.20)",
+    "&:hover": {
+      backgroundColor: "rgba(128, 128, 128, 0.25)",
+    },
+  };
+
   const next = () => setIndex((i) => (i + 1) % images.length);
-  const prev = () =>
-    setIndex((i) => (i - 1 + images.length) % images.length);
+  const prev = () => setIndex((i) => (i - 1 + images.length) % images.length);
 
   return (
     <Modal open={openIndex !== null} onClose={onClose}>
@@ -30,10 +36,12 @@ export const ImageModal = ({ images, openIndex, onClose }) => {
           aria-label="Close modal"
           sx={{
             position: "absolute",
+            zIndex: 10,
             top: 8,
             right: 8,
             color: "white",
-            zIndex: 10,
+            p: 0.5,
+            ...buttonHoverStyles,
           }}
         >
           <CloseIcon />

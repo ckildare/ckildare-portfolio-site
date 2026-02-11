@@ -1,3 +1,5 @@
+import theme from '@/theme/theme';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Head from 'next/head';
@@ -15,7 +17,10 @@ export default function App({ Component, pageProps }) {
       <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
     </Head>
-    <Component {...pageProps} />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </ThemeProvider>
     <Analytics />
     <SpeedInsights />
   </>
