@@ -27,6 +27,7 @@ export const ImageModal = ({ images, openIndex, onClose }) => {
         <IconButton
           onClick={onClose}
           alt="Close image modal button"
+          aria-label="Close modal"
           sx={{
             position: "absolute",
             top: 8,
@@ -42,6 +43,7 @@ export const ImageModal = ({ images, openIndex, onClose }) => {
           <IconButton
             onClick={prev}
             alt="Paginate to previous image in carousel button"
+            aria-label="Paginate to previous image"
             sx={{
               position: "absolute",
               top: "50%",
@@ -71,6 +73,7 @@ export const ImageModal = ({ images, openIndex, onClose }) => {
           <IconButton
             onClick={next}
             alt="Paginate to next image in carousel button"
+            aria-label="Paginate to next image"
             sx={{
               position: "absolute",
               top: "50%",

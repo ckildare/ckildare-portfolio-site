@@ -53,6 +53,7 @@ export const ProjectCard = ({ project }) => {
               target="_blank"
               underline="none"
               alt="Link to view project"
+              aria-label="Go to live project"
               sx={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -77,6 +78,7 @@ export const ProjectCard = ({ project }) => {
               target="_blank"
               underline="none"
               alt="Link to view project repo"
+              aria-label="Go to project GitHub page"
               sx={{
                 display: "inline-flex",
                 alignItems: "center",

@@ -20,7 +20,14 @@ export default function Header() {
       sx={{ backdropFilter: "blur(10px)" }}
     >
       <Toolbar sx={{ display: "flex", flexDirection: "column", py: 2 }}>
-        <Box sx={{ display: "flex", width: "100%", justifyContent: "space-between", mt: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-between",
+            mt: 2,
+          }}
+        >
           <Box sx={{ display: "flex", alignItems: "flex-end", gap: 2, mt: 2 }}>
             <Typography variant="h4" fontWeight={700}>
               Connor Kildare
@@ -31,20 +38,47 @@ export default function Header() {
           </Box>
 
           <Box sx={{ display: "flex", alignItems: "center", gap: 2, mt: 2 }}>
-            <Link href="https://github.com/ckildare" alt="Link to ckildare GitHub page" target="_blank">
-              <IconButton alt="Icon button for GitHub Link" color="inherit">
+            <Link
+              href="https://github.com/ckildare"
+              alt="Link to ckildare GitHub page"
+              aria-label="Go to ckildare GitHub page"
+              target="_blank"
+            >
+              <IconButton
+                alt="Icon button for GitHub Link"
+                aria-label="Go to ckildare GitHub page"
+                color="inherit"
+              >
                 <GitHubIcon fontSize="large" />
               </IconButton>
             </Link>
 
-            <Link href="https://gitlab.com/ckildare19" alt="Link to ckildare GitLab page" target="_blank">
-              <IconButton alt="Icon button for GitLab Link" color="inherit">
+            <Link
+              href="https://gitlab.com/ckildare19"
+              alt="Link to ckildare GitLab page"
+              aria-label="Go to ckildare19 GitLab page"
+              target="_blank"
+            >
+              <IconButton
+                alt="Icon button for GitLab Link"
+                aria-label="Go to ckildare19 GitLab page"
+                color="inherit"
+              >
                 <SiGitlab size={28} />
               </IconButton>
             </Link>
 
-            <Link href="https://linkedin.com/in/connor-kildare" alt="Link to LinkedIn" target="_blank">
-              <IconButton alt="Icon button for LinkedIn Link" color="inherit">
+            <Link
+              href="https://linkedin.com/in/connor-kildare"
+              alt="Link to LinkedIn"
+              aria-label="Go to LinkedIn page"
+              target="_blank"
+            >
+              <IconButton
+                alt="Icon button for LinkedIn Link"
+                aria-label="Go to LinkedIn page"
+                color="inherit"
+              >
                 <LinkedInIcon fontSize="large" />
               </IconButton>
             </Link>

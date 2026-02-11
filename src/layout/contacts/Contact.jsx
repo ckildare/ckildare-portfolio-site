@@ -145,6 +145,7 @@ export const Contact = () => {
           disabled={!captchaToken || loading}
           onClick={handleSubmit}
           alt="Button to submit and send email"
+          aria-label="Send email"
           sx={{
             mt: 1,
             py: 1.25,
