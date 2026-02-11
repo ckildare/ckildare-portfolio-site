@@ -1,0 +1,73 @@
+[
+  {
+    "title": "Software Developer I",
+    "name": "Assurity, Inc",
+    "startDate": "May 2025",
+    "endDate": "Present",
+    "contributions": [
+      "Developed and contributed to ASP.NET MVC application releases.",
+      "Addressed legacy issues using RabbitMQ, SQL Server Management Studio (SSMS), and Azure DevOps.",
+      "Implemented application logging to reduce production errors.",
+      "Built internal tools using low-code platforms to support business operations."
+    ]
+  },
+  {
+    "title": "Software Engineer Intern",
+    "name": "Speedway Motors Inc.",
+    "startDate": "May 2022",
+    "endDate": "Jun 2024, Dec 2024 – May 2025",
+    "contributions": [
+      "Optimized C# checkout APIs, reducing response time by approximately 38%.",
+      "Led React.js frontend development using Context API, LogRocket, and Split feature flags.",
+      "Built a C# microservice for product recommendations with Storybook and Google Analytics integration.",
+      "Saved the company over $100K annually through backend integration and order tracking optimization."
+    ]
+  },
+  {
+    "title": "Software Engineer Intern",
+    "name": "Pinata Inc.",
+    "startDate": "Jun 2024",
+    "endDate": "Dec 2024",
+    "contributions": [
+      "Refactored React.js and TypeScript frontend using Material UI.",
+      "Implemented Figma designs and OAuth2 authentication flows.",
+      "Created third-party API integration suites in Go, validated using Postman."
+    ]
+  },
+  {
+    "title": "Team Lead and Developer",
+    "name": "DMSi",
+    "startDate": "Aug 2023",
+    "endDate": "May 2025",
+    "contributions": [
+      "Led a five-developer team to build a lumber search portal.",
+      "Designed RESTful APIs in Go for scalable, low-latency inventory access.",
+      "Deployed infrastructure on Google Cloud Platform with GitHub integrations.",
+      "Delivered a production-ready system that reduced inventory errors and processing times by 25%."
+    ]
+  },
+  {
+    "title": "Web Developer for Yao Labs",
+    "name": "UNL FYRE Program",
+    "description": "The First Year Research Experience (FYRE) Program is a program designed to give first-year students the opportunity to work with faculty on research projects. The program is designed to help students develop research skills, learn about research opportunities at UNL, and engage with faculty and other students in a research community.",
+    "startDate": "August 2021",
+    "endDate": "May 2022",
+    "contributions": [
+      "Develop web pages using HTML, CSS, Python, JavaScript, and Bootstrap technologies.",
+      "Monitor the growth of the virtual reality industry and coordinate project plans around developing virtual reality simulation software.",
+      "Collaborate with Dr. Yao to learn web design technologies and develop project plans."
+    ]
+  },
+  {
+    "title": "Business Owner",
+    "name": "Limitless Reality",
+    "description": "Limitless Reality is a virtual reality business that I created and ran at the ages of 15-16 before the Covid-19 pandemic. Limitless Reality allowed me to explore my interests of virtual reality and running a business at a young age, giving my career a head-start.",
+    "startDate": "September 2019",
+    "endDate": "February 2020",
+    "contributions": [
+      "Developed an efficient virtual reality user \"onboarding\" experience to quickly and effectively help customers use the system.",
+      "Collaborated with Eagle Hollow Haunts during the fall season to deploy two HTC Vive virtual reality attractions.",
+      "Hired, managed, trained, and collaborated with three employees to set up and maintain two booths with HTC Vive virtual reality systems."
+    ]
+  }
+]

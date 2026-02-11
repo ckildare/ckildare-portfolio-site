@@ -1,4 +1,4 @@
-import { ProjectStatus } from ''
+import { ProjectStatus } from '@/public/enums/ProjectStatus';
 
 import csePhoto from '../card-screenshots/cse-background.jpg';
 import laundryScheduler from '../card-screenshots/laundry-scheduler.png';
