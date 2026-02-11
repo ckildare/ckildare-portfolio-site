@@ -7,7 +7,6 @@ export default async function handler(req, res) {
 
   const { name, email, message, captchaToken } = req.body;
 
-  // 1. Verify hCaptcha
   const verifyRes = await fetch("https://hcaptcha.com/siteverify", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -23,14 +22,13 @@ export default async function handler(req, res) {
     return res.status(400).json({ success: false, error: "Invalid captcha" });
   }
 
-  // 2. Send email via Resend
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL,
       to: process.env.CONTACT_TO_EMAIL,
-      subject: "New Portfolio Contact Message",
+      subject: "Message from Portfolio Site",
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
