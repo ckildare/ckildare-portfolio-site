@@ -1,11 +1,11 @@
 import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import { AlertMessage } from "@/components/AlertMessage";
+import { FormInput } from "@/components/FormInput";
 
 const HCaptcha = dynamic(() => import("@hcaptcha/react-hcaptcha"), {
   ssr: false,
@@ -13,6 +13,12 @@ const HCaptcha = dynamic(() => import("@hcaptcha/react-hcaptcha"), {
 
 export const Contact = () => {
   const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
     name: "",
     email: "",
     message: "",
@@ -29,8 +35,19 @@ export const Contact = () => {
 
   const captchaRef = useRef(null);
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const validateField = (name, value) => {
+    if (name === "name" && !value.trim()) return "Name is required";
+    if (name === "email" && !emailRegex.test(value)) return "Enter a valid email address";
+    if (name === "message" && !value.trim()) return "Message is required";
+    return "";
+  };
+
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    setErrors({ ...errors, [name]: validateField(name, value) });
   };
 
   const handleVerify = (token) => {
@@ -66,6 +83,7 @@ export const Contact = () => {
         });
 
         setForm({ name: "", email: "", message: "" });
+        setErrors({ name: "", email: "", message: "" });
         captchaRef.current.resetCaptcha();
         setCaptchaToken(null);
       } else {
@@ -75,7 +93,7 @@ export const Contact = () => {
           message: "Something went wrong. Please try again.",
         });
       }
-    } catch (err) {
+    } catch {
       setAlert({
         open: true,
         type: "error",
@@ -85,6 +103,15 @@ export const Contact = () => {
 
     setLoading(false);
   };
+
+  const isFormValid =
+    form.name.trim() &&
+    emailRegex.test(form.email) &&
+    form.message.trim() &&
+    captchaToken &&
+    !errors.name &&
+    !errors.email &&
+    !errors.message;
 
   return (
     <Box>
@@ -107,46 +134,37 @@ export const Contact = () => {
           backgroundColor: "background.paper",
         }}
       >
-        <Box>
-          <Typography variant="h6" sx={{ mb: 0.5, color: "text.secondary" }}>
-            Name
-          </Typography>
-          <TextField
-            fullWidth
-            name="name"
-            placeholder="Your name"
-            value={form.name}
-            onChange={handleChange}
-          />
-        </Box>
+        <FormInput
+          label="Name"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          required
+          error={errors.name}
+          helperText={errors.name}
+        />
 
-        <Box>
-          <Typography variant="h6" sx={{ mb: 0.5, color: "text.secondary" }}>
-            Email
-          </Typography>
-          <TextField
-            fullWidth
-            name="email"
-            placeholder="you@email.com"
-            value={form.email}
-            onChange={handleChange}
-          />
-        </Box>
+        <FormInput
+          label="Email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          required
+          error={errors.email}
+          helperText={errors.email}
+        />
 
-        <Box>
-          <Typography variant="h6" sx={{ mb: 0.5, color: "text.secondary" }}>
-            Message
-          </Typography>
-          <TextField
-            fullWidth
-            name="message"
-            placeholder="What can I do for you?"
-            multiline
-            minRows={4}
-            value={form.message}
-            onChange={handleChange}
-          />
-        </Box>
+        <FormInput
+          label="Message"
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          required
+          multiline
+          minRows={4}
+          error={errors.message}
+          helperText={errors.message}
+        />
 
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <HCaptcha
@@ -160,7 +178,7 @@ export const Contact = () => {
         <Button
           variant="contained"
           size="large"
-          disabled={!captchaToken || loading}
+          disabled={!isFormValid || loading}
           onClick={handleSubmit}
           alt="Button to submit and send email"
           aria-label="Send email"
