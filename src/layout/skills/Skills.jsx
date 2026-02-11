@@ -3,10 +3,9 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { technologies, tools } from "data/skills";
-import { Container } from "@mui/material";
 
 export const Skills = () => {
-  const CARD_SIZE = 110; // adjust to taste
+  const CARD_SIZE = 110;
 
   const renderItems = (items) =>
     items.map(({ name, icon: Icon, color }, idx) => (
@@ -50,7 +49,7 @@ export const Skills = () => {
     ));
 
   return (
-    <Container maxWidth="lg" sx={{ py: 8 }}>
+    <Box>
       <Typography
         variant="h4"
         fontWeight={700}
@@ -66,7 +65,7 @@ export const Skills = () => {
         Technologies
       </Typography>
 
-      <Grid container spacing={2} sx={{ mb: 6 }}>
+      <Grid container spacing={2} justifyContent="center" sx={{ mb: 6 }}>
         {renderItems(technologies)}
       </Grid>
 
@@ -77,9 +76,9 @@ export const Skills = () => {
         Tools
       </Typography>
 
-      <Grid container spacing={2}>
+      <Grid container spacing={2} justifyContent="center">
         {renderItems(tools)}
       </Grid>
-    </Container>
+    </Box>
   );
 };

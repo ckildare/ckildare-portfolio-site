@@ -1,36 +1,47 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
-import Header from '@/layout/Header';
-import WorkLayout from '@/layout/work/WorkLayout';
-import ProjectsLayout from '@/layout/projects/ProjectsLayout';
-import { Contact } from '@/layout/contacts/Contact';
-import { Skills } from '@/layout/skills/Skills';
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Header from "@/layout/Header";
+import WorkLayout from "@/layout/work/WorkLayout";
+import ProjectsLayout from "@/layout/projects/ProjectsLayout";
+import { Contact } from "@/layout/contacts/Contact";
+import { Skills } from "@/layout/skills/Skills";
+import About from "@/layout/About/About";
+import { Typography } from "@mui/material";
 
 export default function Index() {
   return (
     <Box>
       <Header />
-      <Box sx={{ mt: 6 }}>
-        <Container maxWidth="md" sx={{ mb: 8 }}>
-          <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
-            <Typography variant="h4" fontWeight={700} gutterBottom>
-              About Me
-            </Typography>
-            <Typography variant="body1" color="text.secondary">
-              I'm a software developer with a passion for building clean, efficient,
-              and user‑focused applications. I enjoy working across the stack and
-              constantly learning new technologies to expand my skill set.
-            </Typography>
-          </Paper>
-        </Container>
+      <Container maxWidth="lg" sx={{
+        my: 6,
+        display: "flex",
+        flexDirection: "column",
+        gap: 3
+      }}>
+        <section id="about">
+          <About />
+        </section>
 
-        <ProjectsLayout />
-        <WorkLayout />
-        <Skills />
-        <Contact />
-      </Box>
+        <section id="projects">
+          <ProjectsLayout />
+        </section>
+
+        <section id="work">
+          <WorkLayout />
+        </section>
+
+        <section id="skills">
+          <Skills />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
+
+        <Typography variant="body2" fontWeight={700} sx={{ alignSelf: "center", color: "text.secondary" }}>
+          Connor Kildare @2026
+        </Typography>
+      </Container>
     </Box>
   );
 }

@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -88,7 +87,7 @@ export const Contact = () => {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ py: 8 }}>
+    <Box>
       <Typography
         variant="h4"
         fontWeight={700}
@@ -108,7 +107,6 @@ export const Contact = () => {
           backgroundColor: "background.paper",
         }}
       >
-        {/* NAME */}
         <Box>
           <Typography variant="h6" sx={{ mb: 0.5, color: "text.secondary" }}>
             Name
@@ -122,7 +120,6 @@ export const Contact = () => {
           />
         </Box>
 
-        {/* EMAIL */}
         <Box>
           <Typography variant="h6" sx={{ mb: 0.5, color: "text.secondary" }}>
             Email
@@ -136,7 +133,6 @@ export const Contact = () => {
           />
         </Box>
 
-        {/* MESSAGE */}
         <Box>
           <Typography variant="h6" sx={{ mb: 0.5, color: "text.secondary" }}>
             Message
@@ -152,7 +148,6 @@ export const Contact = () => {
           />
         </Box>
 
-        {/* CAPTCHA */}
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <HCaptcha
             sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
@@ -162,7 +157,6 @@ export const Contact = () => {
           />
         </Box>
 
-        {/* SUBMIT BUTTON */}
         <Button
           variant="contained"
           size="large"
@@ -191,6 +185,6 @@ export const Contact = () => {
         message={alert.message}
         onClose={() => setAlert({ ...alert, open: false })}
       />
-    </Container>
+    </Box>
   );
 };

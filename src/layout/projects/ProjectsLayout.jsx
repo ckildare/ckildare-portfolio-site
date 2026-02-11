@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
-import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { GridLayout } from "../../components/GridLayout";
 import { projectData } from "data/projects";
+import { Box } from "@mui/material";
 
 const ProjectCard = dynamic(
   () =>
@@ -14,7 +14,7 @@ const ProjectCard = dynamic(
 
 const ProjectsLayout = () => {
   return (
-    <Container maxWidth="lg" sx={{ py: 6 }}>
+    <Box>
       <Typography
         variant="h4"
         fontWeight={700}
@@ -28,7 +28,7 @@ const ProjectsLayout = () => {
           <ProjectCard key={index} project={project} />
         ))}
       </GridLayout>
-    </Container>
+    </Box>
   );
 };
 
