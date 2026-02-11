@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
-import { ImageModal } from "./ImageModal";
+
+const ImageModal = dynamic(() => import("./ImageModal"), {
+  ssr: false,
+});
 
 export const HoverableMediaCard = ({ images }) => {
   const [openIndex, setOpenIndex] = useState(null);
