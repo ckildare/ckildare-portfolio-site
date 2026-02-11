@@ -5,10 +5,12 @@ import { GridLayout } from "../../components/GridLayout";
 import { projectData } from "data/projects";
 
 const ProjectCard = dynamic(
-  () => import("./ProjectCard.jsx").then(mod => mod.ProjectCard),
+  () =>
+    import("./ProjectCard.jsx").then((mod) => ({
+      default: mod.ProjectCard,
+    })),
   { ssr: false }
 );
-
 
 const ProjectsLayout = () => {
   return (

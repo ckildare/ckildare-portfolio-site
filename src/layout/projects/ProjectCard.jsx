@@ -8,8 +8,7 @@ import { LinkRounded } from "@mui/icons-material";
 import { HoverableMediaCard } from "../../components/HoverableMediaCard";
 
 export const ProjectCard = ({ project }) => {
-  const { title, description, status, projectLink, repoLink, supportingImgs } =
-    project;
+  const { title, description, projectLink, repoLink, supportingImgs } = project;
 
   return (
     <Card
@@ -26,7 +25,9 @@ export const ProjectCard = ({ project }) => {
       }}
     >
       {supportingImgs?.length > 0 && (
-        <HoverableMediaCard images={supportingImgs} />
+        <HoverableMediaCard
+          images={supportingImgs}
+        />
       )}
 
       <CardContent
@@ -41,7 +42,7 @@ export const ProjectCard = ({ project }) => {
         <Typography variant="h5" fontWeight={700}>
           {title}
         </Typography>
-        
+
         <Typography variant="body2">{description}</Typography>
 
         <Box

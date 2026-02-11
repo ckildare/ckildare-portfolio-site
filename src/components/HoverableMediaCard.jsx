@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 
 const ImageModal = dynamic(
-  () => import("./ImageModal.jsx").then(mod => mod.ProjectCard),
+  () => import("./ImageModal.jsx").then(mod => mod.ImageModal),
   { ssr: false }
 );
 
