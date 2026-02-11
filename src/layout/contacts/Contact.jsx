@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
+import { AlertMessage } from "@/components/AlertMessage";
 
 const HCaptcha = dynamic(() => import("@hcaptcha/react-hcaptcha"), {
   ssr: false,
@@ -18,9 +19,14 @@ export const Contact = () => {
     message: "",
   });
 
+  const [alert, setAlert] = useState({
+    open: false,
+    type: "success",
+    message: "",
+  });
+
   const [captchaToken, setCaptchaToken] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null);
 
   const captchaRef = useRef(null);
 
@@ -40,7 +46,6 @@ export const Contact = () => {
     if (!captchaToken) return;
 
     setLoading(true);
-    setStatus(null);
 
     try {
       const res = await fetch("/api/contact", {
@@ -55,15 +60,28 @@ export const Contact = () => {
       const data = await res.json();
 
       if (data.success) {
-        setStatus("success");
+        setAlert({
+          open: true,
+          type: "success",
+          message: "Message sent successfully!",
+        });
+
         setForm({ name: "", email: "", message: "" });
         captchaRef.current.resetCaptcha();
         setCaptchaToken(null);
       } else {
-        setStatus("error");
+        setAlert({
+          open: true,
+          type: "error",
+          message: "Something went wrong. Please try again.",
+        });
       }
     } catch (err) {
-      setStatus("error");
+      setAlert({
+        open: true,
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
     }
 
     setLoading(false);
@@ -74,7 +92,7 @@ export const Contact = () => {
       <Typography
         variant="h4"
         fontWeight={700}
-        sx={{ mb: 4, textAlign: "center" }}
+        sx={{ mb: 4, textAlign: "center", color: "text.primary" }}
       >
         Contact Me
       </Typography>
@@ -87,10 +105,12 @@ export const Contact = () => {
           display: "flex",
           flexDirection: "column",
           gap: 3,
+          backgroundColor: "background.paper",
         }}
       >
+        {/* NAME */}
         <Box>
-          <Typography variant="subtitle2" sx={{ mb: 0.5 }}>
+          <Typography variant="h6" sx={{ mb: 0.5, color: "text.secondary" }}>
             Name
           </Typography>
           <TextField
@@ -102,8 +122,9 @@ export const Contact = () => {
           />
         </Box>
 
+        {/* EMAIL */}
         <Box>
-          <Typography variant="subtitle2" sx={{ mb: 0.5 }}>
+          <Typography variant="h6" sx={{ mb: 0.5, color: "text.secondary" }}>
             Email
           </Typography>
           <TextField
@@ -115,14 +136,15 @@ export const Contact = () => {
           />
         </Box>
 
+        {/* MESSAGE */}
         <Box>
-          <Typography variant="subtitle2" sx={{ mb: 0.5 }}>
+          <Typography variant="h6" sx={{ mb: 0.5, color: "text.secondary" }}>
             Message
           </Typography>
           <TextField
             fullWidth
             name="message"
-            placeholder="Tell me about your project"
+            placeholder="What can I do for you?"
             multiline
             minRows={4}
             value={form.message}
@@ -130,6 +152,7 @@ export const Contact = () => {
           />
         </Box>
 
+        {/* CAPTCHA */}
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <HCaptcha
             sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
@@ -139,6 +162,7 @@ export const Contact = () => {
           />
         </Box>
 
+        {/* SUBMIT BUTTON */}
         <Button
           variant="contained"
           size="large"
@@ -151,22 +175,22 @@ export const Contact = () => {
             py: 1.25,
             fontWeight: 600,
             borderRadius: 2,
+            backgroundColor: "primary.main",
+            "&:hover": {
+              backgroundColor: "primary.dark",
+            },
           }}
         >
           {loading ? "Sending..." : "Send Message"}
         </Button>
-
-        {status === "success" && (
-          <Typography color="success.main">
-            Message sent successfully!
-          </Typography>
-        )}
-        {status === "error" && (
-          <Typography color="error.main">
-            Something went wrong. Please try again.
-          </Typography>
-        )}
       </Paper>
+
+      <AlertMessage
+        open={alert.open}
+        type={alert.type}
+        message={alert.message}
+        onClose={() => setAlert({ ...alert, open: false })}
+      />
     </Container>
   );
 };

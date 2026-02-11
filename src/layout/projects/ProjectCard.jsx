@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import { LinkRounded } from "@mui/icons-material";
 
-import { HoverableMediaCard } from "../../components/HoverableMediaCard";
+import { HoverableMediaCard } from "@/components/HoverableMediaCard";
 
 export const ProjectCard = ({ project }) => {
   const { title, description, projectLink, repoLink, supportingImgs } = project;
