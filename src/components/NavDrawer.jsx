@@ -12,27 +12,25 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { SiGitlab } from "react-icons/si";
 import Link from "next/link";
+import { ResumeButton } from "./ResumeButton";
 
 export function NavDrawer({ open, onClose, navItems, onNavigate }) {
   return (
     <Drawer anchor="left" open={open} onClose={onClose}>
       <Box sx={{ width: 260, p: 2, position: "relative" }}>
-        <IconButton
-          onClick={onClose}
-          aria-label="Close navigation menu"
-          alt="Button to close navigation menu"
-          sx={{
-            position: "absolute",
-            top: 8,
-            right: 8
-          }}
-        >
-          <CloseIcon />
-        </IconButton>
+        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 2, mt: 4 }}>
+          <Typography variant="h6" fontWeight={700}>
+            Navigation
+          </Typography>
 
-        <Typography variant="h6" fontWeight={700} sx={{ mb: 2, mt: 4 }}>
-          Navigation
-        </Typography>
+          <IconButton
+            onClick={onClose}
+            aria-label="Close navigation menu"
+            alt="Button to close navigation menu"
+          >
+            <CloseIcon />
+          </IconButton>
+        </Box>
 
         <Divider sx={{ mb: 2 }} />
 
@@ -49,6 +47,10 @@ export function NavDrawer({ open, onClose, navItems, onNavigate }) {
             </ListItem>
           ))}
         </List>
+
+        <Box sx={{ mt: 3 }}>
+          <ResumeButton />
+        </Box>
 
         <Divider sx={{ my: 2 }} />
 
